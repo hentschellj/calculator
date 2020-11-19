@@ -1,0 +1,26 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "A calculator created with jQuery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hentschellj/calculator.git"
+  },
+  "keywords": [
+    "jQuery"
+  ],
+  "author": "Jack Hentschell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hentschellj/calculator/issues"
+  },
+  "homepage": "https://github.com/hentschellj/calculator#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
