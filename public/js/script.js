@@ -1,14 +1,20 @@
 (function() {
   'use strict';
 
-  const displayValue = 0;
+  let displayValue = 0;
 
   $('#calc .btn').click(function() {
     const btnValue = $(this).data('value');
     if (btnValue === '=') {
       processEquation();
     } else {
-      updateDisplay(btnValue);
+      if ((displayValue[displayValue.length-1] === '+') ||
+          (displayValue[displayValue.length-1] === '-') ||
+          (displayValue[displayValue.length-1] === '*') || 
+          (displayValue[displayValue.length-1] === '/')) {
+        displayValue = displayValue.substr(0, displayValue.length-1)
+      }
+      updateDisplay(btnValue, false);
     }
   });
 
@@ -16,7 +22,12 @@
     // return result;
   }
 
-  const updateDisplay = function(value) {
-    $('#calc .display').text(value);
+  const updateDisplay = function(value, overwrite) {
+    if (overwrite === true) {
+      displayValue = value;
+    } else {
+      displayValue += value;
+    }
+    $('#calc .display').text(displayValue);
   }
 })();
