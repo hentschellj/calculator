@@ -35,7 +35,11 @@
     if (overwrite === true) {
       displayValue = value;
     } else {
-      if (displayValue === '0') {
+      if (displayValue === '0' ||
+          displayValue === '+' ||
+          displayValue === '-' ||
+          displayValue === '*' ||
+          displayValue === '/') {
         displayValue = value;
       } else {
         displayValue += value;
