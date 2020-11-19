@@ -37,7 +37,6 @@
     } else {
       if (displayValue === '0' ||
           displayValue === '+' ||
-          displayValue === '-' ||
           displayValue === '*' ||
           displayValue === '/') {
         displayValue = value;
