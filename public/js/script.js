@@ -7,6 +7,8 @@
     const btnValue = $(this).data('value');
     if (btnValue === '=') {
       processEquation();
+    } else if (btnValue === 'reset') {
+      updateDisplay('0', true);
     } else {
       if ((displayValue[displayValue.length-1] === '+') ||
           (displayValue[displayValue.length-1] === '-') ||
