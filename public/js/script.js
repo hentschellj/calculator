@@ -2,10 +2,11 @@
   'use strict';
 
   $('#calc .digit').click(function() {
-    console.log('Digit clicked');
+    const btnValue = $(this).data('value');
+    console.log(btnValue);
   });
 
   $('#calc .operator-group .btn').click(function() {
     console.log('Operator clicked');
-  })
+  });
 })();
