@@ -25,10 +25,16 @@
   }
 
   const updateDisplay = function(value, overwrite) {
+    displayValue = displayValue.toString();
+    
     if (overwrite === true) {
       displayValue = value;
     } else {
-      displayValue += value;
+      if (displayValue === '0') {
+        displayValue = value;
+      } else {
+        displayValue += value;
+      }
     }
     $('#calc .display').text(displayValue);
   }
