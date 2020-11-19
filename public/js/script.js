@@ -10,11 +10,16 @@
     } else if (btnValue === 'reset') {
       updateDisplay('0', true);
     } else {
-      if ((displayValue[displayValue.length-1] === '+') ||
-          (displayValue[displayValue.length-1] === '-') ||
-          (displayValue[displayValue.length-1] === '*') || 
-          (displayValue[displayValue.length-1] === '/')) {
-        displayValue = displayValue.substr(0, displayValue.length-1)
+      if (btnValue === '+' ||
+          btnValue === '-' ||
+          btnValue === '*' ||
+          btnValue === '/') {
+        if ((displayValue[displayValue.length-1] === '+') ||
+            (displayValue[displayValue.length-1] === '-') ||
+            (displayValue[displayValue.length-1] === '*') || 
+            (displayValue[displayValue.length-1] === '/')) {
+          displayValue = displayValue.substr(0, displayValue.length-1)
+        }
       }
       updateDisplay(btnValue, false);
     }
@@ -26,7 +31,7 @@
 
   const updateDisplay = function(value, overwrite) {
     displayValue = displayValue.toString();
-    
+
     if (overwrite === true) {
       displayValue = value;
     } else {
