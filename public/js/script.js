@@ -1,12 +1,12 @@
 (function() {
   'use strict';
 
-  $('#calc .digit').click(function() {
+  $('#calc .btn').click(function() {
     const btnValue = $(this).data('value');
     console.log(btnValue);
   });
 
-  $('#calc .operator-group .btn').click(function() {
-    console.log('Operator clicked');
-  });
+  const processEquation = function() {
+    return result;
+  }
 })();
