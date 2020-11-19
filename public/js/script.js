@@ -6,7 +6,7 @@
   $('#calc .btn').click(function() {
     const btnValue = $(this).data('value');
     if (btnValue === '=') {
-      processEquation();
+      updateDisplay(processEquation(), true);
     } else if (btnValue === 'reset') {
       updateDisplay('0', true);
     } else {
@@ -26,7 +26,13 @@
   });
 
   const processEquation = function() {
-    // return result;
+    try {
+      let result = eval(displayValue);
+      return result;
+    } catch(e) {
+      console.log(e);
+      return 'ERROR';
+    }
   }
 
   const updateDisplay = function(value, overwrite) {
@@ -38,7 +44,9 @@
       if (displayValue === '0' ||
           displayValue === '+' ||
           displayValue === '*' ||
-          displayValue === '/') {
+          displayValue === '/' ||
+          displayValue === 'ERROR' ||
+          displayValue === 'Infinity') {
         displayValue = value;
       } else {
         displayValue += value;
