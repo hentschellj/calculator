@@ -1,12 +1,22 @@
 (function() {
   'use strict';
 
+  const displayValue = 0;
+
   $('#calc .btn').click(function() {
     const btnValue = $(this).data('value');
-    console.log(btnValue);
+    if (btnValue === '=') {
+      processEquation();
+    } else {
+      updateDisplay(btnValue);
+    }
   });
 
   const processEquation = function() {
-    return result;
+    // return result;
+  }
+
+  const updateDisplay = function(value) {
+    $('#calc .display').text(value);
   }
 })();
